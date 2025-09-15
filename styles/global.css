@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+:root {
+  --rose-gold: #e0bfb8;
+  --deep-pink: #d6336c;
+  --cream: #fdf5e6;
+  --midnight: #2c1810;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: var(--cream);
+  color: var(--midnight);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+}
+
+a {
+  text-decoration: none;
+  color: var(--deep-pink);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.3);
+}
+
+.navbar a {
+  margin: 0 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.navbar a:hover {
+  background: var(--rose-gold);
+  transform: translateY(-3px);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 80px 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 30px;
+  margin: 20px 0;
+  background: var(--deep-pink);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Falling Petals */
+.petal {
+  position: absolute;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: fall 10s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Floating Hearts */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
